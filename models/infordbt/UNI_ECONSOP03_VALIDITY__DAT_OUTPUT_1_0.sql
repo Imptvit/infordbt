@@ -1,0 +1,32 @@
+SELECT
+UNIQUE_ID, Field_Name,Field_Value 
+FROM ( SELECT 
+in0.UNIQUE_ID,
+in0.Name_econ_file_count AS Field_Name,
+in0.econ_file_count AS Field_Value 
+FROM {{ ref ('FIL_SFB_ECONSOP03_FILECHECK_SOP03_VALIDITY_MISMATCH_ECON_VALIDITY_MISMATCH__OUT_OUT_1_0') }} AS in0
+UNION ALL SELECT
+in1.UNIQUE_ID,
+in1.Name_econ_meta_count AS Field_Name,
+in1.econ_meta_count AS Field_Value 
+FROM {{ ref ('FIL_SFB_ECONSOP03_FILECHECK_SOP03_VALIDITY_MISMATCH_ECON_VALIDITY_MISMATCH__OUT_OUT_1_0') }} AS in1
+UNION ALL SELECT
+in2.UNIQUE_ID,
+in2.Name_econ_validity AS Field_Name,
+in2.econ_file_count AS Field_Value 
+FROM  {{ ref ('FIL_SFB_ECONSOP03_FILECHECK_SOP03_VALIDITY_MISMATCH_ECON_VALIDITY_MISMATCH__OUT_OUT_1_0') }} AS in2
+UNION ALL SELECT
+in4.UNIQUE_ID,
+in4.Name_sop03_file_count AS Field_Name,
+in4.sop03_file_count AS Field_Value 
+FROM  {{ ref ('FIL_SFB_ECONSOP03_FILECHECK_SOP03_VALIDITY_MISMATCH_ECON_VALIDITY_MISMATCH__OUT_OUT_1_0') }} AS in4
+UNION ALL SELECT
+in5.UNIQUE_ID,
+in5.Name_sop03_meta_count AS Field_Name,
+in5.sop03_meta_count AS Field_Value 
+FROM  {{ ref ('FIL_SFB_ECONSOP03_FILECHECK_SOP03_VALIDITY_MISMATCH_ECON_VALIDITY_MISMATCH__OUT_OUT_1_0') }} AS in5
+UNION ALL SELECT
+in6.UNIQUE_ID,
+in6.Name_sop03_validity AS Field_Name,
+in6.econ_file_count AS Field_Value 
+FROM {{ ref ('FIL_SFB_ECONSOP03_FILECHECK_SOP03_VALIDITY_MISMATCH_ECON_VALIDITY_MISMATCH__OUT_OUT_1_0') }} AS in6) 
