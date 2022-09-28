@@ -13,4 +13,4 @@ IFF ( (  in0.econ_file_count  IS NOT NULL )   AND  (  in0.econ_meta_count  IS NO
 'SOP03 File Count' AS Name_sop03_file_count,
 'SOP03 Meta Count' AS Name_sop03_meta_count,
 'SOP03 Validity Check' AS Name_sop03_validity 
-FROM {{ ref('JNR_SFB_ECONSOP03_FILECHECK_JOIN_OUT_0_OUT_1_0 AS in0') }} 
+FROM {{ ref('JNR_SFB_ECONSOP03_FILECHECK_JOIN_OUT_0_OUT_1_0') }}  AS in0
